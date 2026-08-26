@@ -1,24 +1,52 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Atmosphere } from "@/components/site/Atmosphere";
+import { Cursor } from "@/components/site/Cursor";
+import { Intro } from "@/components/site/Intro";
+import { Nav } from "@/components/site/Nav";
+import { Hero } from "@/components/site/Hero";
+import { Models } from "@/components/site/Models";
+import { Editorial } from "@/components/site/Editorial";
+import { Creative } from "@/components/site/Creative";
+import { About } from "@/components/site/About";
+import { Contact, Footer } from "@/components/site/Contact";
+import { useAtmosphere } from "@/components/site/useAtmosphere";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const TITLE = "Top Model Zimbabwe — Model Management & Creative Talent";
+const DESC =
+  "Top Model Zimbabwe is a Harare-based model management house representing women, men and creative talent for fashion, beauty, campaign and film worldwide.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: TITLE },
+      { name: "description", content: DESC },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESC },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
+  useAtmosphere();
+
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <Intro />
+      <Cursor />
+      <Atmosphere />
+      <Nav />
+      <main>
+        <Hero />
+        <Models />
+        <Editorial />
+        <Creative />
+        <About />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   );
 }
