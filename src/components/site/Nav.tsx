@@ -1,6 +1,8 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
 
+import logoAsset from "@/assets/top-model-zimbabwe-logo.jpg.asset.json";
+
 const LINKS = [
   { href: "#hero", label: "Home" },
   { href: "#models", label: "Models" },
@@ -30,10 +32,23 @@ export function Nav() {
 
   return (
     <>
-      <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4 sm:px-6">
+      <header className="fixed inset-x-0 top-0 z-50 flex items-center gap-2 px-4 pt-4 sm:gap-3 sm:px-6">
+        <a
+          href="#hero"
+          aria-label="Top Model Zimbabwe home"
+          className="glass flex h-11 w-auto shrink-0 items-center justify-center overflow-hidden rounded-full px-3 py-2 sm:h-12"
+          data-cursor="HOME"
+        >
+          <img
+            src={logoAsset.url}
+            alt="Top Model Zimbabwe"
+            className="h-full w-auto max-w-[6.5rem] object-contain sm:max-w-[8rem]"
+          />
+        </a>
+
         <nav
           aria-label="Primary"
-          className="glass flex w-full max-w-6xl items-center justify-between rounded-full px-5 py-3 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] sm:px-7"
+          className="glass flex flex-1 items-center justify-between rounded-full px-5 py-3 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] sm:px-7"
           style={{ opacity: lifted ? 1 : 0.92 }}
         >
           <a href="#hero" className="label text-foreground" data-cursor="HOME">
