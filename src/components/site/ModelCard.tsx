@@ -4,14 +4,14 @@ import type { Model } from "@/data/models";
 interface Props {
   model: Model;
   index: number;
-  className?: string;
+  className?: string | undefined;
   onOpen: (m: Model) => void;
 }
 
 export function ModelCard({ model, index, className = "", onOpen }: Props) {
   return (
     <motion.article
-      className={`group relative ${className}`}
+      className={`group relative isolate ${className}`}
       initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-12%" }}
@@ -52,7 +52,7 @@ export function ModelCard({ model, index, className = "", onOpen }: Props) {
         </div>
       </button>
 
-      <div className="mt-3 flex items-baseline justify-between gap-4">
+      <div className="relative z-20 mt-3 flex items-baseline justify-between gap-4">
         <h3 className="display text-2xl sm:text-3xl">{model.name}</h3>
         <span className="label text-muted-foreground">
           {String(index + 1).padStart(2, "0")} / {model.division}

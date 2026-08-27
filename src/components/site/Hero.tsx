@@ -84,7 +84,7 @@ export function Hero() {
             <motion.h1
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 2.2, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ delay: 1.9, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
               className="display iridescent-text text-[17vw] leading-[0.8] sm:text-[15vw] lg:text-[11.5vw]"
             >
               TOP MODEL
@@ -95,7 +95,7 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 2.7, duration: 1 }}
+            transition={{ delay: 2.3, duration: 1 }}
             className="mt-8 flex flex-col gap-6 border-t border-border pt-6 sm:flex-row sm:items-end sm:justify-between"
           >
             <div className="space-y-2">

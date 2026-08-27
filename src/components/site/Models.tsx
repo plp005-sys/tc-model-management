@@ -9,7 +9,7 @@ const RHYTHM = [
   "col-span-12 sm:col-span-7 lg:col-span-6 [--card-ratio:4/5]",
   "col-span-12 sm:col-span-5 lg:col-span-3 lg:mt-40 [--card-ratio:2/3]",
   "col-span-12 sm:col-span-6 lg:col-span-3 lg:mt-16 [--card-ratio:3/4]",
-  "col-span-12 sm:col-span-6 lg:col-span-4 lg:-mt-24 [--card-ratio:3/4]",
+  "col-span-12 sm:col-span-6 lg:col-span-4 lg:mt-8 [--card-ratio:3/4]",
   "col-span-12 sm:col-span-7 lg:col-span-5 lg:mt-24 [--card-ratio:16/11]",
   "col-span-12 sm:col-span-5 lg:col-span-3 [--card-ratio:2/3]",
 ];
@@ -55,7 +55,7 @@ export function Models() {
           </div>
         </div>
 
-        <motion.div layout className="mt-20 grid grid-cols-12 gap-x-5 gap-y-16 sm:gap-x-8">
+        <motion.div layout className="mt-20 grid grid-cols-12 gap-x-5 gap-y-20 sm:gap-x-8">
           {list.map((m, i) => (
             <ModelCard
               key={m.id}

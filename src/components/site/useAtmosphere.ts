@@ -11,8 +11,8 @@ export function useAtmosphere() {
         const visible = entries
           .filter((e) => e.isIntersecting)
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        const room = (visible?.target as HTMLElement | undefined)?.dataset.atmosRoom;
-        if (room) document.documentElement.dataset.atmos = room;
+        const room = (visible?.target as HTMLElement | undefined)?.dataset['atmosRoom'];
+        if (room) document.documentElement.dataset['atmos'] = room;
       },
       { threshold: [0.15, 0.4, 0.7], rootMargin: "-20% 0px -20% 0px" },
     );

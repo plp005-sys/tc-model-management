@@ -8,7 +8,7 @@ export function Intro() {
 
   useEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const timer = window.setTimeout(() => setDone(true), reduce ? 200 : 2100);
+    const timer = window.setTimeout(() => setDone(true), reduce ? 200 : 1600);
     return () => window.clearTimeout(timer);
   }, []);
 
