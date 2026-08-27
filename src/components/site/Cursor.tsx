@@ -22,7 +22,7 @@ export function Cursor() {
       t.y = e.clientY;
       if (dot.current) dot.current.style.translate = `${t.x}px ${t.y}px`;
       const el = (e.target as HTMLElement)?.closest?.("[data-cursor]") as HTMLElement | null;
-      setLabel(el?.dataset.cursor ?? "");
+      setLabel(el?.dataset['cursor'] ?? "");
     };
 
     const tick = () => {

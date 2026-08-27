@@ -30,12 +30,12 @@ export function Atmosphere() {
 
     const tick = () => {
       pos.forEach((p, i) => {
-        p.x += (target.x - p.x) * ease[i];
-        p.y += (target.y - p.y) * ease[i];
-        const el = blobs[i].current;
+        p.x += (target.x - p.x) * (ease[i] ?? 0.03);
+        p.y += (target.y - p.y) * (ease[i] ?? 0.03);
+        const el = blobs[i]?.current;
         if (el) {
-          const dx = (p.x - 0.5) * 34 * amp[i];
-          const dy = (p.y - 0.5) * 30 * amp[i];
+          const dx = (p.x - 0.5) * 34 * (amp[i] ?? 1);
+          const dy = (p.y - 0.5) * 30 * (amp[i] ?? 1);
           el.style.translate = `${dx}vw ${dy}vh`;
         }
       });

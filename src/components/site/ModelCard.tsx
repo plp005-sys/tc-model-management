@@ -4,7 +4,7 @@ import type { Model } from "@/data/models";
 interface Props {
   model: Model;
   index: number;
-  className?: string;
+  className?: string | undefined;
   onOpen: (m: Model) => void;
 }
 
