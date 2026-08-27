@@ -17,9 +17,9 @@ export function Editorial() {
       id="editorial"
       ref={ref}
       data-atmos-room="editorial"
-      className="relative h-[130svh] overflow-hidden"
+      className="relative h-[100svh] overflow-hidden"
     >
-      <div className="sticky top-0 flex h-[100svh] items-center justify-center overflow-hidden grain">
+      <div className="relative flex h-full w-full items-center justify-center overflow-hidden grain">
         <motion.img
           src={wide}
           alt="Two models in couture inside an architectural hall lit violet and emerald"

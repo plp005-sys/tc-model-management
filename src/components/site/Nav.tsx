@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
 
-import logoAsset from "@/assets/top-model-zimbabwe-logo.jpg.asset.json";
+import logoImg from "@/assets/top-model-zimbabwe-logo.jpg";
 
 const LINKS = [
   { href: "#hero", label: "Home" },
@@ -32,17 +32,17 @@ export function Nav() {
 
   return (
     <>
-      <header className="fixed inset-x-0 top-0 z-50 flex items-center gap-2 px-4 pt-4 sm:gap-3 sm:px-6">
+      <header className="fixed inset-x-0 top-0 z-50 flex items-center gap-2 px-4 pt-4 sm:gap-4 sm:px-6">
         <a
           href="#hero"
           aria-label="Top Model Zimbabwe home"
-          className="glass flex h-11 w-auto shrink-0 items-center justify-center overflow-hidden rounded-full px-3 py-2 sm:h-12"
+          className="glass group flex h-14 w-auto shrink-0 items-center justify-center overflow-hidden rounded-full border border-champagne/30 px-4 py-2 shadow-lg backdrop-blur-xl transition-all duration-500 hover:border-champagne hover:shadow-[0_0_30px_rgba(224,195,142,0.3)] sm:h-16 sm:px-5 md:h-20 md:px-7"
           data-cursor="HOME"
         >
           <img
-            src={logoAsset.url}
-            alt="Top Model Zimbabwe"
-            className="h-full w-auto max-w-[6.5rem] object-contain sm:max-w-[8rem]"
+            src={logoImg}
+            alt="Top Model Zimbabwe Logo"
+            className="h-full w-auto max-w-[9rem] object-contain brightness-105 transition-transform duration-500 group-hover:scale-105 sm:max-w-[13rem] md:max-w-[17rem]"
           />
         </a>
 
@@ -92,15 +92,19 @@ export function Nav() {
       <AnimatePresence>
         {open && (
           <motion.div
-            className="fixed inset-0 z-[60] flex flex-col justify-between bg-ink/80 px-6 py-8 backdrop-blur-2xl md:hidden"
+            className="fixed inset-0 z-[60] flex flex-col justify-between bg-ink/90 px-6 py-8 backdrop-blur-2xl md:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
           >
             <div className="flex items-center justify-between">
-              <span className="label text-champagne">Index</span>
-              <button type="button" onClick={() => setOpen(false)} className="label" aria-label="Close menu">
+              <img
+                src={logoImg}
+                alt="Top Model Zimbabwe"
+                className="h-10 w-auto max-w-[12rem] object-contain brightness-105"
+              />
+              <button type="button" onClick={() => setOpen(false)} className="label text-champagne" aria-label="Close menu">
                 Close
               </button>
             </div>

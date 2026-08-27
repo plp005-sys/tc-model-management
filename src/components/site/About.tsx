@@ -4,7 +4,7 @@ import { imagery } from "@/data/models";
 const LINES = ["WE DON'T", "DISCOVER", "FACES.", "WE DISCOVER", "PRESENCE."];
 
 const STATS = [
-  { value: "16", label: "Represented talent" },
+  { value: "56", label: "Represented talent" },
   { value: "09", label: "Countries booked" },
   { value: "2014", label: "Founded in Harare" },
 ];
@@ -61,10 +61,10 @@ export function About() {
             loading="lazy"
             className="h-[70vh] w-full object-cover"
           />
-          <div className="glass absolute -left-4 bottom-8 max-w-[15rem] px-5 py-4">
+          <div className="glass absolute -left-4 bottom-8 max-w-[17rem] px-5 py-4">
             <p className="label text-champagne">Studio</p>
-            <p className="mt-2 text-sm text-foreground/80">
-              21 Josiah Chinamano Ave, Harare — by appointment.
+            <p className="mt-2 text-sm text-foreground/80 leading-relaxed">
+              5b Bronte Close, Off Broadlands Road, Emerald Hill, Harare, Zimbabwe — by appointment.
             </p>
           </div>
         </motion.div>
