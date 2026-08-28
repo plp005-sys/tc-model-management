@@ -89,7 +89,11 @@ export function Hero() {
             >
               TOP MODEL
               <span className="block pl-[6vw] italic">Zimbabwe</span>
+              <span className="label mt-5 block font-sans text-[0.7rem] not-italic leading-relaxed tracking-[0.3em] text-foreground/70 sm:text-xs">
+                Model Management &amp; Creative Talent in Harare
+              </span>
             </motion.h1>
+
           </div>
 
           <motion.div

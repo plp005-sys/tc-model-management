@@ -39,19 +39,23 @@ export function Editorial() {
         />
 
         <div className="relative w-full">
+          <h2 className="sr-only">Editorial 04 — Beauty in Motion, Chrome Season</h2>
           <motion.p
             style={{ x: wordA }}
             className="display whitespace-nowrap text-[19vw] leading-[0.8] text-foreground/95"
+            aria-hidden="true"
           >
             BEAUTY IN
           </motion.p>
           <motion.p
             style={{ x: wordB, filter: blur }}
             className="display whitespace-nowrap pl-[20vw] text-[19vw] italic leading-[0.8] text-champagne"
+            aria-hidden="true"
           >
             MOTION
           </motion.p>
         </div>
+
 
         <div className="glass absolute bottom-10 left-1/2 hidden -translate-x-1/2 rounded-full px-6 py-3 md:block">
           <p className="label text-foreground/80">
