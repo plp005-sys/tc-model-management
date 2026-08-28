@@ -79,7 +79,7 @@ export function Nav() {
             aria-label="Open menu"
             className="label flex items-center gap-2 text-foreground md:hidden"
           >
-            Index
+            Menu
             <span className="flex h-3 w-4 flex-col justify-between">
               <span className="h-px w-full bg-current" />
               <span className="h-px w-full bg-current" />
