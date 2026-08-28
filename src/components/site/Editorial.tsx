@@ -26,7 +26,7 @@ export function Editorial() {
           loading="lazy"
           width={1920}
           height={1088}
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover object-[82%_center] md:object-center"
           style={{ scale, y }}
         />
         <div
