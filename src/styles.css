@@ -297,3 +297,10 @@
     transform: scale(1.14);
   }
 }
+
+/* Mobile: keep model cards portrait so faces stay in frame */
+@media (max-width: 639px) {
+  #models img {
+    --card-mobile-ratio: 3 / 4;
+  }
+}
