@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "cc72c1e8-a321-42c3-97df-b4d4be6b9976",
-  "project_id": "46251595-ff6a-459b-9183-c9fb9107a9b2",
-  "url": "/__l5e/assets-v1/cc72c1e8-a321-42c3-97df-b4d4be6b9976/top-model-zimbabwe-logo.jpg",
-  "r2_key": "a/v1/46251595-ff6a-459b-9183-c9fb9107a9b2/cc72c1e8-a321-42c3-97df-b4d4be6b9976/top-model-zimbabwe-logo.jpg",
-  "original_filename": "top-model-zimbabwe-logo.jpg",
-  "size": 56607,
   "content_type": "image/jpeg",
-  "created_at": "2026-08-27T07:54:03Z"
+  "created_at": "2026-08-27T07:54:03Z",
+  "original_filename": "top-model-zimbabwe-logo.jpg",
+  "project_id": "7ec98714-a747-485e-9961-47245c46b4d7",
+  "r2_key": "a/v1/7ec98714-a747-485e-9961-47245c46b4d7/cc72c1e8-a321-42c3-97df-b4d4be6b9976/top-model-zimbabwe-logo.jpg",
+  "size": 56607,
+  "url": "/__l5e/assets-v1/cc72c1e8-a321-42c3-97df-b4d4be6b9976/top-model-zimbabwe-logo.jpg",
+  "version": 1
 }
