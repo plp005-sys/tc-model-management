@@ -37,8 +37,8 @@ export function ModelCard({ model, index, className = "", onOpen }: Props) {
             loading="lazy"
             width={900}
             height={1300}
-            className="w-full object-cover grayscale-[0.35] transition-all duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.06] group-hover:grayscale-0"
-            style={{ aspectRatio: "var(--card-ratio, 3 / 4)" }}
+            className="w-full object-cover object-[50%_18%] grayscale-[0.35] transition-all duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.06] group-hover:grayscale-0 sm:object-center"
+            style={{ aspectRatio: "var(--card-mobile-ratio, var(--card-ratio, 3 / 4))" }}
           />
           <span
             aria-hidden="true"
