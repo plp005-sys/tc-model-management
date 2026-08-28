@@ -34,9 +34,19 @@ export function Contact() {
               </p>
             </div>
             <div className="flex gap-6">
-              {["Instagram", "TikTok", "LinkedIn"].map((s) => (
-                <a key={s} href="#contact" className="label magnetic-link text-foreground/70 hover:text-foreground">
-                  {s}
+              {[
+                { label: "Instagram", href: "https://www.instagram.com/topmodelzimbabwe/?hl=en" },
+                { label: "Facebook", href: "https://www.facebook.com/Topmodelzim" },
+                { label: "TikTok", href: "#contact" },
+              ].map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target={s.href.startsWith("http") ? "_blank" : undefined}
+                  rel={s.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className="label magnetic-link text-foreground/70 hover:text-foreground"
+                >
+                  {s.label}
                 </a>
               ))}
             </div>
@@ -189,8 +199,7 @@ export function Footer() {
               TOP MODEL <span className="italic text-champagne">ZIMBABWE</span>
             </p>
           </div>
-          <div className="space-y-2 text-right">
-            <p className="label text-muted-foreground">Harare · Johannesburg · Paris</p>
+          <div className="space-y-2 text-left md:text-right">
             <p className="label text-muted-foreground">© 2026 Top Model Zimbabwe. All rights reserved.</p>
           </div>
         </div>

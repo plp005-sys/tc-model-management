@@ -126,7 +126,7 @@ export function Nav() {
                 </motion.li>
               ))}
             </ul>
-            <p className="label text-muted-foreground">Harare · Johannesburg · Paris</p>
+            <p className="label text-muted-foreground">Harare · Zimbabwe</p>
           </motion.div>
         )}
       </AnimatePresence>
