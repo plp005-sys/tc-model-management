@@ -4,12 +4,12 @@ import { useEffect, useState } from "react";
 import logoImg from "@/assets/top-model-zimbabwe-logo.jpg";
 
 const LINKS = [
-  { href: "#hero", label: "Home" },
-  { href: "#models", label: "Models" },
-  { href: "#editorial", label: "Editorial" },
-  { href: "#creative", label: "Creative" },
-  { href: "#about", label: "About" },
-  { href: "#contact", label: "Contact" },
+  { href: "/", label: "Home" },
+  { href: "/models", label: "Models" },
+  { href: "/#editorial", label: "Editorial" },
+  { href: "/#creative", label: "Creative" },
+  { href: "/#about", label: "About" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export function Nav() {
@@ -34,7 +34,7 @@ export function Nav() {
     <>
       <header className="fixed inset-x-0 top-0 z-50 flex items-center gap-2 px-4 pt-4 sm:gap-4 sm:px-6">
         <a
-          href="#hero"
+          href="/"
           aria-label="Top Model Zimbabwe home"
           className="glass group flex h-14 w-auto shrink-0 items-center justify-center overflow-hidden rounded-full border border-champagne/30 px-4 py-2 shadow-lg backdrop-blur-xl transition-all duration-500 hover:border-champagne hover:shadow-[0_0_30px_rgba(224,195,142,0.3)] sm:h-16 sm:px-5 md:h-20 md:px-7"
           data-cursor="HOME"
@@ -51,7 +51,7 @@ export function Nav() {
           className="glass flex flex-1 items-center justify-between rounded-full px-5 py-3 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] sm:px-7"
           style={{ opacity: lifted ? 1 : 0.92 }}
         >
-          <a href="#hero" className="label text-foreground" data-cursor="HOME">
+          <a href="/" className="label text-foreground" data-cursor="HOME">
             TOP MODEL <span className="text-champagne">ZW</span>
           </a>
 
@@ -66,7 +66,7 @@ export function Nav() {
           </ul>
 
           <a
-            href="#contact"
+            href="/#contact"
             data-cursor="BOOK"
             className="label hidden rounded-full border border-champagne/40 px-5 py-2 text-champagne transition-colors duration-500 hover:bg-champagne/10 md:inline-block"
           >
