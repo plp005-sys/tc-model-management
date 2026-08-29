@@ -1,14 +1,14 @@
 import { motion } from "motion/react";
+import { Link } from "@tanstack/react-router";
 import type { Model } from "@/data/models";
 
 interface Props {
   model: Model;
   index: number;
   className?: string | undefined;
-  onOpen: (m: Model) => void;
 }
 
-export function ModelCard({ model, index, className = "", onOpen }: Props) {
+export function ModelCard({ model, index, className = "" }: Props) {
   return (
     <motion.article
       className={`group relative isolate ${className}`}
@@ -17,9 +17,9 @@ export function ModelCard({ model, index, className = "", onOpen }: Props) {
       viewport={{ once: true, margin: "-12%" }}
       transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
     >
-      <button
-        type="button"
-        onClick={() => onOpen(model)}
+      <Link
+        to="/models/$id"
+        params={{ id: model.id }}
         data-cursor="VIEW MODEL"
         aria-label={`View ${model.name}`}
         className="relative block w-full overflow-hidden text-left"
@@ -50,10 +50,14 @@ export function ModelCard({ model, index, className = "", onOpen }: Props) {
             <span className="label text-champagne">{model.height}</span>
           </span>
         </div>
-      </button>
+      </Link>
 
       <div className="relative z-20 mt-3 flex items-baseline justify-between gap-4">
-        <h3 className="display text-2xl sm:text-3xl">{model.name}</h3>
+        <h3 className="display text-2xl sm:text-3xl">
+          <Link to="/models/$id" params={{ id: model.id }}>
+            {model.name}
+          </Link>
+        </h3>
         <span className="label text-muted-foreground">
           {String(index + 1).padStart(2, "0")} / {model.division}
         </span>
