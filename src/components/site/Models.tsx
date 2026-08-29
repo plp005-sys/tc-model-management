@@ -1,8 +1,8 @@
 import { useMemo, useState } from "react";
 import { motion } from "motion/react";
-import { divisions, models, type Division, type Model } from "@/data/models";
+import { Link } from "@tanstack/react-router";
+import { divisions, models, type Division } from "@/data/models";
 import { ModelCard } from "./ModelCard";
-import { ModelDetail } from "./ModelDetail";
 
 /** Asymmetric editorial rhythm: column span, ratio, vertical offset. */
 const RHYTHM = [
@@ -14,9 +14,47 @@ const RHYTHM = [
   "col-span-12 sm:col-span-5 lg:col-span-3 [--card-ratio:2/3]",
 ];
 
+export function ModelGrid({ list }: { list: typeof models }) {
+  return (
+    <motion.div layout className="grid grid-cols-12 gap-x-5 gap-y-20 sm:gap-x-8">
+      {list.map((m, i) => (
+        <ModelCard key={m.id} model={m} index={i} className={RHYTHM[i % RHYTHM.length]} />
+      ))}
+    </motion.div>
+  );
+}
+
+export function DivisionFilter({
+  filter,
+  onChange,
+}: {
+  filter: Division | "all";
+  onChange: (d: Division | "all") => void;
+}) {
+  return (
+    <div className="glass flex flex-wrap gap-1 self-start rounded-full p-1">
+      {divisions.map((d) => (
+        <button
+          key={d.key}
+          type="button"
+          onClick={() => onChange(d.key)}
+          data-cursor="FILTER"
+          aria-pressed={filter === d.key}
+          className={`label rounded-full px-5 py-2.5 transition-colors duration-500 ${
+            filter === d.key
+              ? "bg-foreground text-primary-foreground"
+              : "text-foreground/70 hover:text-foreground"
+          }`}
+        >
+          {d.label}
+        </button>
+      ))}
+    </div>
+  );
+}
+
 export function Models() {
   const [filter, setFilter] = useState<Division | "all">("all");
-  const [active, setActive] = useState<Model | null>(null);
 
   const list = useMemo(
     () => (filter === "all" ? models : models.filter((m) => m.division === filter)),
@@ -35,40 +73,18 @@ export function Models() {
             </h2>
           </div>
 
-          <div className="glass flex flex-wrap gap-1 self-start rounded-full p-1">
-            {divisions.map((d) => (
-              <button
-                key={d.key}
-                type="button"
-                onClick={() => setFilter(d.key)}
-                data-cursor="FILTER"
-                aria-pressed={filter === d.key}
-                className={`label rounded-full px-5 py-2.5 transition-colors duration-500 ${
-                  filter === d.key
-                    ? "bg-foreground text-primary-foreground"
-                    : "text-foreground/70 hover:text-foreground"
-                }`}
-              >
-                {d.label}
-              </button>
-            ))}
+          <div className="flex flex-col items-start gap-4">
+            <DivisionFilter filter={filter} onChange={setFilter} />
+            <Link to="/models" className="label magnetic-link text-champagne" data-cursor="ALL">
+              View the full board →
+            </Link>
           </div>
         </div>
 
-        <motion.div layout className="mt-20 grid grid-cols-12 gap-x-5 gap-y-20 sm:gap-x-8">
-          {list.map((m, i) => (
-            <ModelCard
-              key={m.id}
-              model={m}
-              index={i}
-              className={RHYTHM[i % RHYTHM.length]}
-              onOpen={setActive}
-            />
-          ))}
-        </motion.div>
+        <div className="mt-20">
+          <ModelGrid list={list.slice(0, 9)} />
+        </div>
       </div>
-
-      <ModelDetail model={active} onClose={() => setActive(null)} />
     </section>
   );
 }
