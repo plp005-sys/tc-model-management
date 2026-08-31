@@ -65,6 +65,8 @@ export function Contact() {
                 <img
                   src={logoImg}
                   alt="Top Model Zimbabwe Official Logo"
+                  width={1920}
+                  height={644}
                   className="h-14 sm:h-16 md:h-20 w-auto max-w-full object-contain brightness-105"
                 />
               </div>
