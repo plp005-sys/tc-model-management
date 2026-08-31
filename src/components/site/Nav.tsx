@@ -104,6 +104,8 @@ export function Nav() {
               <img
                 src={logoImg}
                 alt="Top Model Zimbabwe"
+                width={1920}
+                height={644}
                 className="h-10 w-auto max-w-[12rem] object-contain brightness-105"
               />
               <button type="button" onClick={() => setOpen(false)} className="label text-champagne" aria-label="Close menu">

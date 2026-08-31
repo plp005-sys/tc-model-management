@@ -195,6 +195,8 @@ export function Footer() {
             <img
               src={logoImg}
               alt="Top Model Zimbabwe Logo"
+              width={1920}
+              height={644}
               className="h-16 sm:h-20 md:h-24 w-auto max-w-[20rem] object-contain brightness-105"
             />
             <p className="display text-3xl leading-tight text-foreground/90 sm:text-4xl">
