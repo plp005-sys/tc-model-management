@@ -42,6 +42,8 @@ export function Nav() {
           <img
             src={logoImg}
             alt="Top Model Zimbabwe Logo"
+            width={1920}
+            height={644}
             className="h-full w-auto max-w-[9rem] object-contain brightness-105 transition-transform duration-500 group-hover:scale-105 sm:max-w-[13rem] md:max-w-[17rem]"
           />
         </a>
@@ -102,6 +104,8 @@ export function Nav() {
               <img
                 src={logoImg}
                 alt="Top Model Zimbabwe"
+                width={1920}
+                height={644}
                 className="h-10 w-auto max-w-[12rem] object-contain brightness-105"
               />
               <button type="button" onClick={() => setOpen(false)} className="label text-champagne" aria-label="Close menu">
